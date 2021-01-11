@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <table class="table table-striped" >
+                <thead>
+                    <tr> <th>Id</th><th>Nom</th> <th>Prix</th> <th>Date de Vente</th> </tr>
+                </thead>
+                <tbody *ngFor="let medicament of medicaments">
+                   <tr >
+                    <td>{{medicament.idMedicament}}</td>
+                    <td>{{medicament.nomMedicament}}</td>
+                    <td>{{medicament.prixMedicament}}</td>
+                    <td>{{medicament.dateVente | date:'dd/MM/yyyy'}}</td>
+                    <td><a class="btn btn-danger" (click)="supprimerMedicament(medicament)">Supprimer</a></td>
+                    <td><a class="btn btn-success" [routerLink]="['/updateMedicament',medicament.idMedicament]">Modifier</a></td>         
+                </tr>
+                </tbody>
+           </table>
+        </div>
+    </div>
+</div>
